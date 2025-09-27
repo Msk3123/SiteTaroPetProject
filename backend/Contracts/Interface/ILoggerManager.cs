@@ -1,5 +1,5 @@
 using Microsoft.Extensions.Logging;
-namespace Contracts;
+namespace Contracts.Interface;
 
 public interface ILoggerManager 
 {

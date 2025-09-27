@@ -1,6 +1,8 @@
 using Entities.Data;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.AspNetCore.Cors;
+using Microsoft.AspNetCore.Cors; 
+using Contracts.Interface;
+using Repository;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -10,7 +12,7 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddDbContext<RepositoryContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
-
+builder.Services.AddScoped<IRepositoryManager, RepositoryManager>();
 // Add CORS for React frontend
 builder.Services.AddCors(options =>
 {
@@ -19,6 +21,7 @@ builder.Services.AddCors(options =>
         policy.WithOrigins("http://localhost:3000", "https://localhost:3000")
               .AllowAnyHeader()
               .AllowAnyMethod()
+              .SetIsOriginAllowed(origin => true) // Для розробки
               .AllowCredentials();
     });
 });

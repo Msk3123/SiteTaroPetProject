@@ -1674,6 +1674,7 @@
         "framework": ".NETCoreApp,Version=v9.0",
         "dependencies": {
           "AutoMapper": "15.0.1",
+          "Entities": "1.0.0",
           "Microsoft.Extensions.Logging": "9.0.9"
         },
         "compile": {
@@ -1688,7 +1689,6 @@
         "framework": ".NETCoreApp,Version=v9.0",
         "dependencies": {
           "AutoMapper": "15.0.1",
-          "Contracts": "1.0.0",
           "Microsoft.EntityFrameworkCore": "9.0.9",
           "Microsoft.EntityFrameworkCore.SqlServer": "9.0.9"
         },
@@ -1697,6 +1697,35 @@
         },
         "runtime": {
           "bin/placeholder/Entities.dll": {}
+        }
+      },
+      "Repository/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v9.0",
+        "dependencies": {
+          "Contracts": "1.0.0",
+          "Entities": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Repository.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Repository.dll": {}
+        }
+      },
+      "Services/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v9.0",
+        "dependencies": {
+          "AutoMapper": "15.0.1",
+          "Contracts": "1.0.0",
+          "Entities": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Services.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Services.dll": {}
         }
       }
     }
@@ -4929,16 +4958,28 @@
       "type": "project",
       "path": "../Entities/Entities.csproj",
       "msbuildProject": "../Entities/Entities.csproj"
+    },
+    "Repository/1.0.0": {
+      "type": "project",
+      "path": "../Repository/Repository.csproj",
+      "msbuildProject": "../Repository/Repository.csproj"
+    },
+    "Services/1.0.0": {
+      "type": "project",
+      "path": "../Services/Services.csproj",
+      "msbuildProject": "../Services/Services.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net9.0": [
       "AutoMapper >= 15.0.1",
-      "Entities >= 1.0.0",
+      "Contracts >= 1.0.0",
       "Microsoft.AspNetCore.OpenApi >= 9.0.5",
       "Microsoft.EntityFrameworkCore.Design >= 9.0.9",
       "Microsoft.EntityFrameworkCore.SqlServer >= 9.0.9",
       "Microsoft.EntityFrameworkCore.Tools >= 9.0.9",
+      "Repository >= 1.0.0",
+      "Services >= 1.0.0",
       "Swashbuckle.AspNetCore >= 9.0.4"
     ]
   },
@@ -4972,8 +5013,14 @@
         "net9.0": {
           "targetAlias": "net9.0",
           "projectReferences": {
-            "D:\\Programiring\\MyProject\\backend\\Entities\\Entities.csproj": {
-              "projectPath": "D:\\Programiring\\MyProject\\backend\\Entities\\Entities.csproj"
+            "D:\\Programiring\\MyProject\\backend\\Contracts\\Contracts.csproj": {
+              "projectPath": "D:\\Programiring\\MyProject\\backend\\Contracts\\Contracts.csproj"
+            },
+            "D:\\Programiring\\MyProject\\backend\\Repository\\Repository.csproj": {
+              "projectPath": "D:\\Programiring\\MyProject\\backend\\Repository\\Repository.csproj"
+            },
+            "D:\\Programiring\\MyProject\\backend\\Services\\Services.csproj": {
+              "projectPath": "D:\\Programiring\\MyProject\\backend\\Services\\Services.csproj"
             }
           }
         }

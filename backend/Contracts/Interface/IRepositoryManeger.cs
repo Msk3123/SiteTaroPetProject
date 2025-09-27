@@ -1,5 +1,9 @@
-﻿namespace Contracts;
+﻿using Microsoft.EntityFrameworkCore;
+namespace Contracts.Interface;
 
-public class IRepositoryManeger
+public interface IRepositoryManager
 {
+    IUser User { get; }
+    void Save();
+    
 }
