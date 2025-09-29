@@ -24,17 +24,38 @@ public class CartTaroController : ControllerBase
     [HttpPost]
     public async Task<IActionResult> CreateNewCartTaro(DtoCartTaroCreate dtoCartTaroCreate)
     {
-        if (dtoCartTaroCreate == null)
+        try
         {
-            _logger.LogError("DtoCartTaroCreate object sent from client is null.");
-            return BadRequest("Data is null");  // ✅ Повертаємо результат
+            _logger.LogInformation("🎯 POST запит отримано"); // ✅ Перевіряємо чи доходить запит
+
+            if (dtoCartTaroCreate == null)
+            {
+                _logger.LogError("❌ DtoCartTaroCreate object is null");
+                return BadRequest(new { error = "Data is null" }); // ✅ JSON відповідь
+            }
+
+            _logger.LogInformation("✅ Отримані дані: {@DTO}", dtoCartTaroCreate); // ✅ Дивимось що прийшло
+
+            // Перевіряємо чи не пусті основні поля
+            if (string.IsNullOrWhiteSpace(dtoCartTaroCreate.Name))
+            {
+                _logger.LogWarning("⚠️ Name is empty");
+                return BadRequest(new { error = "Name is required" });
+            }
+
+            var entityCartTaro = _mapper.Map<CartTaro>(dtoCartTaroCreate);
+            _logger.LogInformation("✅ Mapper працює: {@Entity}", entityCartTaro);
+
+            _repositoryManager.CartTaro.AddCartTaro(entityCartTaro);
+            await _repositoryManager.SaveAsync();
+
+            _logger.LogInformation("🎉 CartTaro успішно збережено з ID: {Id}", entityCartTaro.Id);
+            return Ok(new { message = "CartTaro created successfully", id = entityCartTaro.Id });
         }
-
-        var entityCartTaro = _mapper.Map<CartTaro>(dtoCartTaroCreate); 
-        _repositoryManager.CartTaro.AddCartTaro(entityCartTaro);
-        await _repositoryManager.SaveAsync();
-        string result = "CartTaro created";
-        return Ok(result);
-
+        catch (Exception ex)
+        {
+            _logger.LogError(ex, "💥 Помилка при створенні CartTaro");
+            return StatusCode(500, new { error = "Internal server error", details = ex.Message });
+        }
     }
 }

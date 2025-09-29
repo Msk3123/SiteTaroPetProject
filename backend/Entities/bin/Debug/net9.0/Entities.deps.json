@@ -9,7 +9,6 @@
       "Entities/1.0.0": {
         "dependencies": {
           "AutoMapper": "15.0.1",
-          "Contracts": "1.0.0",
           "Microsoft.EntityFrameworkCore": "9.0.9",
           "Microsoft.EntityFrameworkCore.Design": "9.0.9",
           "Microsoft.EntityFrameworkCore.SqlServer": "9.0.9",
@@ -1002,18 +1001,6 @@
             "fileVersion": "6.0.21.52210"
           }
         }
-      },
-      "Contracts/1.0.0": {
-        "dependencies": {
-          "AutoMapper": "15.0.1",
-          "Microsoft.Extensions.Logging": "9.0.9"
-        },
-        "runtime": {
-          "Contracts.dll": {
-            "assemblyVersion": "1.0.0.0",
-            "fileVersion": "1.0.0.0"
-          }
-        }
       }
     }
   },
@@ -1547,11 +1534,6 @@
       "sha512": "sha512-IXoJOXIqc39AIe+CIR7koBtRGMiCt/LPM3lI+PELtDIy9XdyeSrwXFdWV9dzJ2Awl0paLWUaknLxFQ5HpHZUog==",
       "path": "system.windows.extensions/6.0.0",
       "hashPath": "system.windows.extensions.6.0.0.nupkg.sha512"
-    },
-    "Contracts/1.0.0": {
-      "type": "project",
-      "serviceable": false,
-      "sha512": ""
     }
   }
 }

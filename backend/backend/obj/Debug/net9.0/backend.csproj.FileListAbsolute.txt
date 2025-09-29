@@ -167,3 +167,8 @@ D:\Programiring\MyProject\backend\backend\obj\Debug\net9.0\refint\backend.dll
 D:\Programiring\MyProject\backend\backend\obj\Debug\net9.0\backend.pdb
 D:\Programiring\MyProject\backend\backend\obj\Debug\net9.0\backend.genruntimeconfig.cache
 D:\Programiring\MyProject\backend\backend\obj\Debug\net9.0\ref\backend.dll
+D:\Programiring\MyProject\backend\backend\bin\Debug\net9.0\Repository.dll
+D:\Programiring\MyProject\backend\backend\bin\Debug\net9.0\Services.dll
+D:\Programiring\MyProject\backend\backend\bin\Debug\net9.0\Repository.pdb
+D:\Programiring\MyProject\backend\backend\bin\Debug\net9.0\Services.pdb
+D:\Programiring\MyProject\backend\backend\bin\Debug\net9.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
