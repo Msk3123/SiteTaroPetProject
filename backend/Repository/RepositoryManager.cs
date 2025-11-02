@@ -34,7 +34,7 @@ public class RepositoryManager : IRepositoryManager
         catch (Exception ex)
         {
             _logger.LogError(ex, "Error occurred while saving changes");
-            throw; // Повторно кидаємо виняток
+                        throw; // Re-throw the exception
         }
     }
 

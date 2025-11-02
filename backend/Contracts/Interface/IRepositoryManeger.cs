@@ -3,8 +3,10 @@ namespace Contracts.Interface;
 
 public interface IRepositoryManager
 {
-    IUser User { get; }
-    ICartTaro CartTaro { get; }
-    void Save();
+    public IUser User { get; }
+    public    ICartTaro CartTaro { get; }
+
+    public void Save();
+    public Task SaveAsync();
     
 }

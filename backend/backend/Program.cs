@@ -3,6 +3,8 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Cors; 
 using Contracts.Interface;
 using Repository;
+using AutoMapper;
+
 using AM; // ✅ Додай using для профілю
 
 var builder = WebApplication.CreateBuilder(args);
@@ -15,8 +17,12 @@ builder.Services.AddDbContext<RepositoryContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 builder.Services.AddScoped<IRepositoryManager, RepositoryManager>();
 
+
 // ✅ КРИТИЧНО: Додаємо AutoMapper!
-builder.Services.AddAutoMapper(typeof(MappingProfile));
+builder.Services.AddAutoMapper(cfg => 
+{
+    cfg.AddProfile<MappingProfile>();
+});
 
 // Add CORS for React frontend
 builder.Services.AddCors(options =>
