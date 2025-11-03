@@ -342,3 +342,4 @@ D:/Programiring/MyProject/backend/backend/obj/Debug/net9.0/ref/backend.dll
 /home/runner/work/SiteTaroPetProject/SiteTaroPetProject/backend/backend/obj/Debug/net9.0/backend.pdb
 /home/runner/work/SiteTaroPetProject/SiteTaroPetProject/backend/backend/obj/Debug/net9.0/backend.genruntimeconfig.cache
 /home/runner/work/SiteTaroPetProject/SiteTaroPetProject/backend/backend/obj/Debug/net9.0/ref/backend.dll
+/home/runner/work/SiteTaroPetProject/SiteTaroPetProject/backend/backend/bin/Debug/net9.0/AutoMapper.Extensions.Microsoft.DependencyInjection.dll
