@@ -3,6 +3,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Cors; 
 using Contracts.Interface;
 using Repository;
+using AM;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -13,6 +14,7 @@ builder.Services.AddSwaggerGen();
 builder.Services.AddDbContext<RepositoryContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 builder.Services.AddScoped<IRepositoryManager, RepositoryManager>();
+builder.Services.AddAutoMapper(typeof(MappingProfile).Assembly);
 // Add CORS for React frontend
 builder.Services.AddCors(options =>
 {

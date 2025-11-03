@@ -7,8 +7,13 @@ public class DtoUser
 
 public class DtoCartTaro
 {
-    
+    public int Id { get; set; }
+    public string Name { get; set; }
+    public string UprightMeaning { get; set; }
+    public string ReversedMeaning { get; set; }
+    public string Keywords { get; set; }
 }
+
 public class DtoUserCreate
 {
     
@@ -16,9 +21,8 @@ public class DtoUserCreate
 
 public class DtoCartTaroCreate
 {
-    string Name;
-    string UprightMeaning;
-    string ReversedMeaning;
-    string Keywords;
-    
+    public string Name { get; set; }
+    public string UprightMeaning { get; set; }
+    public string ReversedMeaning { get; set; }
+    public string Keywords { get; set; }
 }
